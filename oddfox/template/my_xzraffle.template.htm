@@ -1,0 +1,18 @@
+<template include="./view/htm/my.common.template.htm">
+	<slot name="my_nav">
+		<ul class="nav nav-tabs card-header-tabs">
+			<!--{hook my_nav_xzraffle_before.htm}-->
+			<li class="nav-item">
+				<a class="nav-link" href="<?php echo url("my-xzraffle");?>" data-active="my-xzraffle">抽奖中心</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="<?php echo url("my-cjianfo");?>" data-active="my-cjianfo">抽奖记录</a>
+			</li>
+			<!--{hook my_nav_xzraffle_after.htm}-->
+		</ul>
+	</slot>
+</template>
+
+<script>
+$('a[data-active="menu-my-xzraffle"]').addClass('active');
+</script>

@@ -1,0 +1,25 @@
+<template include="./plugin/fox_luckdraw/oddfox/template/my_xzraffle.template.htm">
+	<slot name="my_body">
+        <div class="card-body">
+            <div class="alert alert-primary" role="alert">
+                抽奖次数：<?php echo $user['chouj'];?><br/>
+                金币数量：<?php echo $user['golds'];?> 金币<br/>
+                抽奖码价格：<span class="text-danger"><?php $choujs = setting_get('choujs');echo $choujs;?>/个</span>，<a style="color:blue;" href="luckdraw.htm">点击去抽奖吧</a>
+            </div><hr>
+			<form action="" method="post" id="form">
+			<div class="form-group row">
+				<div class="col-sm-5 input-group">
+					<input type="text" class="form-control" id="cjnum" name="cjnum" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" placeholder="购买数量">
+					<div class="input-group-append">
+						<button type="submit" class="btn btn-primary" id="submit" data-loading-text="正在提交...">购买抽奖码</button>
+					</div>
+				</div>
+				
+			</div>
+			</form>
+			</div>
+    </slot>
+</template>
+<script>
+    $('a[data-active="my-xzraffle"]').addClass('active');
+</script>

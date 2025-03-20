@@ -1,0 +1,45 @@
+<template include="./plugin/fox_luckdraw/oddfox/template/my_xzraffle.template.htm">
+	<slot name="my_body">
+	    <?php $num_pid = db_count('fox_luckdraw');
+	    $luckdraw = db_find('fox_luckdraw',array('uid'=>$uid),array('create_date'=>-1),$page, $pagesize = 20);
+		$pagination = pagination(url("my-cjianfo-{page}"), $num_pid, $page, $pagesize);
+	    ?>
+	    <div class="card-body">
+				<table class="table">
+					<thead>
+						<tr> 
+							<th>时间</th>
+							<th class="text-center">奖品</th>
+						</tr>
+					</thead><thead>
+					</thead>
+					<?php foreach($luckdraw as $v){?>
+					<tbody id="invitelist">
+					    
+												<tr>
+							
+							<td><?php echo date("Y-m-d",$v['create_date']);?></td>
+							<td class="text-center">
+							    <?php if($v['amount'] != '0'){?>
+							    
+							    <span style="color:green;"><?php echo $v['prize'];?></span>
+							    <?php }else{?>
+							    
+							    <span style="color:red;"><?php echo $v['prize'];?></span>
+							    <?php }?>
+							    
+							    <?php if($v['amount'] != '0'){?> 
+							    <b style="color:red;"><?php echo $v['amount'];?></b> 
+							    <?php if($v['exptype'] == 'golds'){echo '金币';}elseif($v['exptype'] == 'rmbs'){echo 'RMB';}?>
+							    <?php }?>
+							</td>
+						</tr>
+											</tbody>
+					<?php }?>
+				</table>
+				<nav class="text-center"><ul class="pagination"><?php echo $pagination; ?></ul></nav>
+			</div>
+    </slot></template>
+<script>
+    $('a[data-active="my-cjianfo"]').addClass('active');
+</script>
