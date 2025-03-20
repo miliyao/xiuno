@@ -1,0 +1,13 @@
+{
+    "name": "奇狐网 · 幸运抽奖",
+    "brief": "幸运抽奖。<a href='https://bbs.oddfox.cn' target='_blank' class='text-danger'>更多精品插件请访问奇狐官网</a>",
+    "version": "1.0",
+    "bbs_version": "4.0.4",
+    "uid": "20394",
+    "username": "༺凨影༻",
+    "installed": 1,
+    "enable": 1,
+    "hooks_rank": [],
+    "overwrites_rank": [],
+    "dependencies": []
+}

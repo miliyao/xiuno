@@ -1,0 +1,1 @@
+<?php/* * 奇狐插件 卸载文件 * QQ:77798085 */!defined('DEBUG') AND exit('Forbidden');$tablepre = $db->tablepre;/*  如果需要清除则删除17行和22行的注释代码，保留19、20行$sql = "ALTER TABLE {$tablepre}user DROP COLUMN `chouj`;";db_exec($sql);*/db_exec("DROP TABLE IF EXISTS `{$tablepre}fox_luckdraw`;");kv_cache_delete('fox_luckdraw');?>
